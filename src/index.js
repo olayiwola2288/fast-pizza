@@ -57,7 +57,6 @@ function App() {
   );
 }
 function Header() {
-  // const style = { color: "red", fontSize: "48", textTransform: "uppercase" };
   const style = {};
   return (
     <header className="header footer">
@@ -67,8 +66,7 @@ function Header() {
 }
 
 function Menu() {
-  // const pizza = pizzaData;
-  // const Pizza = [];
+
   const numPizza = Pizza.length;
   return (
     <main className="menu">
@@ -80,7 +78,7 @@ function Menu() {
             Authentic Italian cuisine. 6 creative dishes to choose from our
             stone oven, all organic, all delicious.{" "}
           </p>
-          <ul className="pizzas">
+          <ul className="grid lg:grid-rows-3 lg:grid-flow-col gap-3">
             {pizzaData.map((pizza) => (
               <Pizza pizzaObj={pizza} key={pizza.name} />
             ))}
@@ -89,19 +87,6 @@ function Menu() {
       ) : (
         <p>we're till working on our menu. please come back later :)</p>
       )}
-
-      {/* <Pizza
-        name="Pizza spinaci"
-        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-        photoName="pizzas/spinaci.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza funghi"
-        ingredients="Tomato, Mushrooms"
-        price={12}
-        photoName="pizzas/funghi.jpg"
-      /> */}
     </main>
   );
 }
@@ -109,7 +94,6 @@ function Menu() {
 function Pizza({ pizzaObj }) {
   console.log(pizzaObj);
 
-  // if (pizzaObj.soldOut) return null;
   return (
     <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
@@ -129,14 +113,6 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
-  // if (hour >= openHour && hour <= closeHour) alert("we're currently open!");
-  // else alert("sorry we are closed for for day thank you");
-  // if (!isOpen)
-  //   return (
-  //     <p>
-  //       We're happy to welcome you between {openHour}:00 and {closeHour}:00
-  //     </p>
-  //   );
   return (
     <footer className="footer">
       {isOpen ? (
