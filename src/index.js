@@ -78,7 +78,7 @@ function Menu() {
             Authentic Italian cuisine. 6 creative dishes to choose from our
             stone oven, all organic, all delicious.{" "}
           </p>
-          <ul className="grid lg:grid-rows-3 lg:grid-flow-col gap-3">
+          <ul className="grid lg:grid-rows-3 lg:grid-flow-col gap-10">
             {pizzaData.map((pizza) => (
               <Pizza pizzaObj={pizza} key={pizza.name} />
             ))}
